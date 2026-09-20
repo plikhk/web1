@@ -1,0 +1,155 @@
+/* ===== Task 2: layout with div + float (no flexbox, no grid) ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #dfe5e8;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+/* whole page box */
+#wrapper {
+  width: 92%;
+  max-width: 960px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border: 2px solid #1d2a35;
+  box-shadow: 8px 8px 0 rgba(29, 42, 53, 0.25);
+}
+
+/* header */
+#header {
+  padding: 28px 20px;
+  background-color: #1d2a35;
+  color: #ffffff;
+  text-align: center;
+}
+
+#header h1 {
+  margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 36px;
+}
+
+#header p {
+  margin: 0;
+  color: #c9d3da;
+}
+
+/* navigation bar: links are floated to the left */
+#navbar {
+  overflow: hidden;              /* makes the bar wrap its floated links */
+  background-color: #c8471b;
+  border-bottom: 3px solid #8f3210;
+}
+
+#navbar a {
+  float: left;
+  padding: 14px 22px;
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+#navbar a:hover {
+  background-color: #8f3210;
+}
+
+#navbar a.current {
+  background-color: #8f3210;
+}
+
+/* sidebar: floated to the left */
+#sidebar {
+  float: left;
+  width: 26%;
+  min-height: 260px;
+  margin: 20px 0 20px 20px;
+  padding: 20px;
+  background-color: #e9dfcc;
+  border: 1px solid #b9ab8f;
+  box-shadow: 3px 3px 0 #b9ab8f;
+}
+
+#sidebar h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #1d2a35;
+}
+
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#sidebar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #b9ab8f;
+}
+
+#sidebar a {
+  color: #1d2a35;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  color: #c8471b;
+  padding-left: 6px;
+}
+
+/* main content (aside section): floated to the right */
+#aside {
+  float: right;
+  width: 66%;
+  min-height: 260px;
+  margin: 20px 20px 20px 0;
+  padding: 20px 25px;
+  background-color: #f6f6f6;
+  border-left: 6px solid #c8471b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#aside h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  color: #1d2a35;
+}
+
+#aside p {
+  margin: 0;
+}
+
+/* footer: clear both floats so it stays at the bottom */
+#footer {
+  clear: both;
+  padding: 16px;
+  background-color: #1d2a35;
+  color: #e6e6e6;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* small screens: stack the columns */
+@media (max-width: 600px) {
+  #navbar a {
+    width: 50%;
+    padding: 12px 6px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  #sidebar,
+  #aside {
+    float: none;
+    width: auto;
+    min-height: 0;
+    margin: 15px;
+  }
+}
